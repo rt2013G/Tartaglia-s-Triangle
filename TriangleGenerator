@@ -1,0 +1,44 @@
+/**
+ * Created by rt2013 on 20/02/2017.
+ */
+
+public class TriangleGenerator {
+
+    private static int[][] tartaglia; // Array of the triangle
+    private static int i,j; // Counters of numbers and lines
+
+    public static void calculate(int lines) throws ArrayIndexOutOfBoundsException{
+        /*
+        Defining the array
+         */
+        tartaglia = new int[lines][];
+
+        /*
+        Defining the lines
+         */
+        for (i = 0; i < tartaglia.length; i++)
+            tartaglia[i] = new int[i+1];
+
+        /*
+        Defining numbers on lines
+         */
+        for (i=0;i<tartaglia.length;i++)
+        {
+            tartaglia[i][0] = 1;
+            tartaglia[i][i] = 1;
+            for (j=1; j<i; j++)
+                tartaglia[i][j]= tartaglia[i-1][j-1] + tartaglia[i-1][j];
+        }
+
+        /*
+        Print of numbers
+         */
+        for (i=0; i<tartaglia.length; i++)
+        {
+            for (j=0;j<tartaglia[i].length; j++)
+                System.out.print(tartaglia[i][j] + " ");
+            System.out.println ();
+        }
+    }
+
+}
