@@ -19,7 +19,7 @@ public class TartagliaTriangle {
                 try{
                     new TartagliaTriangle();
                 }catch(Exception e){
-                    if(e instanceof InputMismatchException) System.out.println("Please insert an integer");
+                    if(e instanceof InputMismatchException) System.err.println("Please insert an integer");
                     else e.printStackTrace();
                 }
             }
