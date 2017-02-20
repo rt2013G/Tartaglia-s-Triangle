@@ -20,24 +20,24 @@ public class TriangleGenerator {
             tartaglia[i] = new int[i+1];
 
         /*
-        Defining numbers on lines
+        Defining the numbers on the lines
          */
-        for (i=0;i<tartaglia.length;i++)
+        for (i = 0; i < tartaglia.length; i++)
         {
             tartaglia[i][0] = 1;
             tartaglia[i][i] = 1;
-            for (j=1; j<i; j++)
-                tartaglia[i][j]= tartaglia[i-1][j-1] + tartaglia[i-1][j];
+            for (j = 1; j < i; j++)
+                tartaglia[i][j] = tartaglia[i - 1][j - 1] + tartaglia[i - 1][j];
         }
 
         /*
-        Print of numbers
+        Printing numbers
          */
-        for (i=0; i<tartaglia.length; i++)
+        for (i = 0; i < tartaglia.length; i++)
         {
-            for (j=0;j<tartaglia[i].length; j++)
+            for (j = 0; j < tartaglia[i].length; j++)
                 System.out.print(tartaglia[i][j] + " ");
-            System.out.println ();
+            System.out.println();
         }
     }
 
