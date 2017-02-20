@@ -5,9 +5,12 @@
 import java.awt.*;
 
 public class TartagliaTriangle {
+    private Scanner s;
 
-    public TartagliaTriangle() throws ArrayIndexOutOfBoundsException{
-        TriangleGenerator.calculate(30); // Calculate the triangle with a specific number of lines
+    public TartagliaTriangle() throws Exception{
+        s = new Scanner(System.in);
+        
+        TriangleGenerator.calculate(s.nextInt()); // Calculate the triangle with a specific number of lines
     }
 
     public static void main(String... args) {
@@ -16,7 +19,8 @@ public class TartagliaTriangle {
                 try{
                     new TartagliaTriangle();
                 }catch(Exception e){
-                    e.printStackTrace();
+                    if(e instanceof InputMismatchException) System.out.println("Please insert an integer");
+                    else e.printStackTrace();
                 }
             }
         });
